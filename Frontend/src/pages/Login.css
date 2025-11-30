@@ -1,0 +1,113 @@
+.login-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f5fa;
+    padding-top: 0;
+    margin-top: -50px; 
+}
+
+.full-center {
+    height: calc(100vh - 60px); /* Navbar height adjust */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    width: 380px;
+    padding: 35px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.login-page {
+    width: 100%;
+    height: calc(100vh - 70px); /* navbar remove */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f5fa;
+}
+
+.login-card h2 {
+    margin-bottom: 8px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+.input-box {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.25s;
+}
+
+.login-center-box {
+    width: 100%;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.input-box:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 4px;
+    font-size: 16px;
+    background: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.login-btn:hover {
+    background: #2563eb;
+}
+
+.register-text {
+    margin-top: 18px;
+    color: #444;
+}
+
+.register-text a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

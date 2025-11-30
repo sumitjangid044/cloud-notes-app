@@ -1,0 +1,103 @@
+/* Full page center */
+.register-page {
+    width: 100%;
+    height: calc(100vh - 70px);
+    /* navbar height adjust */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f5fa;
+}
+
+/* Registration Card */
+.register-card {
+    width: 420px;
+    padding: 35px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
+    text-align: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.register-card h2 {
+    margin-bottom: 8px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+/* First + Last Name Row */
+.name-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+/* Input Styling */
+.input-box {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.25s;
+    background: #f9fafb;
+}
+
+.input-box:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
+    background: white;
+}
+
+/* Submit Button */
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    background: #0f9d58;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-top: 5px;
+}
+
+.register-btn:hover {
+    background: #0b7d45;
+}
+
+/* Login redirect text */
+.login-text {
+    margin-top: 18px;
+    color: #444;
+}
+
+.login-text a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
