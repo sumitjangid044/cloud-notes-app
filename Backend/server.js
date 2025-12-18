@@ -10,27 +10,27 @@ const noteRoutes = require("./routes/notes");
 
 const app = express();
 
+/* ✅ CORS */
 app.use(
   cors({
     origin: [
       "http://localhost:3000",
       "http://localhost:5173",
-      "https://cloud-notes-app-theta.vercel.app" 
+      "https://cloud-notes-app-theta.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   })
 );
 
+/* ✅ VERY IMPORTANT */
+app.use(express.json());   // 🔥 THIS WAS MISSING
 
-
-
+/* ✅ ROUTES */
 app.use("/api/auth", authRoutes);
 app.use("/api/notes", noteRoutes);
 
-
 const PORT = process.env.PORT || 5000;
-
 
 mongoose
   .connect(process.env.MONGO_URI)
