@@ -19,18 +19,21 @@ export default function Register() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();   // 🔥 page reload STOP
+    e.preventDefault();
     try {
-      const res = await axios.post('/auth/register', user);
+      await axios.post('/auth/register', user);
 
-      console.log(res.data);
-      alert('Registration successful');
-      navigate('/login');
+      alert('Registration successful! Redirecting to login...');
+
+      setTimeout(() => {
+        navigate('/login');
+      }, 500);
+
     } catch (err) {
-      console.log(err);
       alert(err.response?.data?.message || 'Registration failed');
     }
   };
+
 
   return (
     <div className="register-page">

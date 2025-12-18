@@ -1,28 +1,48 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const dotenv = require('dotenv');
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const dotenv = require("dotenv");
+
 dotenv.config();
 
-const authRoutes = require('./routes/auth');
-const noteRoutes = require('./routes/notes');
+const authRoutes = require("./routes/auth");
+const noteRoutes = require("./routes/notes");
 
 const app = express();
-app.use(cors());
-app.use(express.json());
 
-app.use('/api/auth', authRoutes);
-app.use('/api/notes', noteRoutes);
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://cloud-notes-app-theta.vercel.app" 
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  })
+);
 
-// ✅ Use Render-assigned port OR 5000 as fallback
+
+
+
+app.use("/api/auth", authRoutes);
+app.use("/api/notes", noteRoutes);
+
+
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(process.env.MONGO_URI)
+
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
   .then(() => {
+    console.log("✅ MongoDB Connected");
     app.listen(PORT, () => {
-      console.log(`✅ Server running on port ${PORT}`);
+      console.log(`🚀 Server running on port ${PORT}`);
     });
   })
-  .catch((err) => {
-    console.error('❌ MongoDB connection failed:', err);
+  .catch((error) => {
+    console.error("❌ MongoDB connection failed:", error.message);
   });
